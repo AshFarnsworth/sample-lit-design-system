@@ -1,0 +1,83 @@
+/**
+ * Global design tokens.
+ *
+ * Components read these through `var(--ds-*, <fallback>)`, so every component
+ * still renders sensibly if a consumer never imports this file. Importing it
+ * is what makes theming (and the dark scheme below) work.
+ */
+:root {
+  color-scheme: light dark;
+
+  /* Palette */
+  --ds-color-bg: #ffffff;
+  --ds-color-surface: #f5f6f8;
+  --ds-color-border: #d9dce2;
+  --ds-color-text: #14171f;
+  --ds-color-text-muted: #5b6270;
+
+  --ds-color-primary: #2f5bd8;
+  --ds-color-primary-hover: #2749ad;
+  --ds-color-primary-text: #ffffff;
+
+  --ds-color-focus: #7aa2ff;
+
+  /* Spacing */
+  --ds-space-1: 0.25rem;
+  --ds-space-2: 0.5rem;
+  --ds-space-3: 0.75rem;
+  --ds-space-4: 1rem;
+  --ds-space-5: 1.5rem;
+  --ds-space-6: 2rem;
+
+  /* Typography */
+  --ds-font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ds-font-size-sm: 0.8125rem;
+  --ds-font-size-md: 0.9375rem;
+  --ds-font-size-lg: 1.0625rem;
+  --ds-font-weight-medium: 550;
+
+  /* Shape */
+  --ds-radius-sm: 4px;
+  --ds-radius-md: 8px;
+  --ds-radius-lg: 12px;
+  --ds-radius-pill: 999px;
+
+  /* Elevation */
+  --ds-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.08);
+  --ds-shadow-md: 0 4px 12px rgb(0 0 0 / 0.1);
+
+  /* Motion */
+  --ds-transition-fast: 120ms ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-ds-theme="light"]) {
+    --ds-color-bg: #12141a;
+    --ds-color-surface: #1b1e26;
+    --ds-color-border: #2f3441;
+    --ds-color-text: #eceef3;
+    --ds-color-text-muted: #a2a9b8;
+
+    --ds-color-primary: #5c84f0;
+    --ds-color-primary-hover: #7599f4;
+    --ds-color-primary-text: #0d1017;
+
+    --ds-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.5);
+    --ds-shadow-md: 0 4px 12px rgb(0 0 0 / 0.55);
+  }
+}
+
+:root[data-ds-theme="dark"] {
+  --ds-color-bg: #12141a;
+  --ds-color-surface: #1b1e26;
+  --ds-color-border: #2f3441;
+  --ds-color-text: #eceef3;
+  --ds-color-text-muted: #a2a9b8;
+
+  --ds-color-primary: #5c84f0;
+  --ds-color-primary-hover: #7599f4;
+  --ds-color-primary-text: #0d1017;
+
+  --ds-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.5);
+  --ds-shadow-md: 0 4px 12px rgb(0 0 0 / 0.55);
+}

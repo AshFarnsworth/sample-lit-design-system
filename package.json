@@ -1,0 +1,25 @@
+{
+  "name": "sample-lit-design-system",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @lit-ds/pokedex",
+    "storybook": "npm run storybook -w @lit-ds/design-system",
+    "build": "npm run build -w @lit-ds/design-system && npm run build -w @lit-ds/pokedex",
+    "build:storybook": "npm run build-storybook -w @lit-ds/design-system",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^8.2.1"
+  },
+  "engines": {
+    "node": ">=20.19"
+  }
+}
